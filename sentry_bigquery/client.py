@@ -8,8 +8,8 @@ from google.cloud.bigquery import Client, SchemaField, Table
 class BigQueryClient:
     """
     Args:
-        project_id (str):
-        account_info (str):
+        project_id (str): Project ID for the project which the client acts on behalf of.
+        account_info (str): Account info in json format
     """
     def __init__(self, project_id: str, account_info: str):
         self._project_id = project_id
@@ -19,7 +19,7 @@ class BigQueryClient:
 
     """
     Args:
-        name (str):
+        name (str): Table name
     Returns:
         google.cloud.bigquery.table.Table
     """
@@ -50,8 +50,8 @@ class BigQueryClient:
 
     """
     Args:
-        name (google.cloud.bigquery.table.Table):
-        payload (dict):
+        table (google.cloud.bigquery.table.Table): BigQuery table instance
+        payload (dict): Raw payload object
     """
     def insert_payload(self, table: Table, payload: dict):
         row = {

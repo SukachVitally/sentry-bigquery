@@ -15,4 +15,6 @@ pip install sentry-bigquery
 3. Go to your Sentry web interface. Open ``Settings`` page of one of your projects.
 4. On ``Integrations`` (or ``Legacy Integrations``) page, find ``BigQuery`` plugin and enable it.
 5. Configure plugin on ``Configure plugin`` page.
+ - Add project ID (Dataset ID from admin panel)
+ - Add [account info](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) file
 6. Done!
