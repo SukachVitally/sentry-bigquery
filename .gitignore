@@ -1,0 +1,6 @@
+venv
+.idea/*
+*.egg-info/*
+sentry_bigquery/__pycache__/
+dist/*
+build/*
