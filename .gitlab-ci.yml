@@ -1,0 +1,15 @@
+image: gitlab.murka.com:5005/murkaphp/standards/docker/python38
+
+stages:
+  - upload
+
+deploy:
+  stage: upload
+  only:
+    refs:
+      - master
+    changes:
+      - sentry_bigquery/__init__.py
+  script:
+    - python setup.py sdist bdist_wheel
+    - python -m twine upload --config-file $PYPIRC_FILE --verbose --repository pypi dist/*
